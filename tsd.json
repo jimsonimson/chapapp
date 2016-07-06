@@ -1,0 +1,57 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "express/express.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "node/node.d.ts": {
+      "commit": "43449c604f997d75e917769c662e3d3b3fb2c0ae"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "requirejs/require.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "mime/mime.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "passport/passport.d.ts": {
+      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+    },
+    "jsonwebtoken/jsonwebtoken.d.ts": {
+      "commit": "43449c604f997d75e917769c662e3d3b3fb2c0ae"
+    }
+  }
+}

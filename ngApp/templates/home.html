@@ -1,0 +1,37 @@
+<div id="index-banner" class="parallax-container boo">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 id="frontL" class="header center teal-text text-lighten-2">Find me a barber.</h1>
+      <div class="row center">
+        <div class="col s4">
+          <input ng-model="vm.searchLocation" id="searchTextField" type="text" placeholder="Search Location">
+        </div>
+        <div class="col s8">
+          <input type="text" name="name" placeholder="Search By Style">
+        </div>
+
+
+      </div>
+      <div class="row center">
+        <h5 class="header col s12 light">Say no more, fam</h5>
+      </div>
+      <div class="row center">
+        <button ng-click="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Search</button>
+      </div>
+      <br><br>
+    </div>
+  </div>
+  <div class="parallax"><img id="backpic1" ng-src="/images/barber1.jpeg"></div>
+</div>
+
+
+<script>
+function initialize() {
+
+var input = document.getElementById('searchTextField');
+var autocomplete = new google.maps.places.Autocomplete(input);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
