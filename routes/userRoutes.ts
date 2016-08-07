@@ -1,25 +1,27 @@
+"use strict";
 import express = require('express');
-import mongoose = require('mongoose');
 import passport = require('passport');
 import jwt = require('jsonwebtoken');
-let User = require('../models/user');
+let mongoose = require('mongoose');
+let User = mongoose.model('User')
 let router = express.Router();
 
-router.post('/Register', function(req, res, next){
+router.post('/register', (req, res, next):any => {
   let user = new User();
   user.username = req.body.username;
   user.email = req.body.email;
   user.setPassword(req.body.password);
   user.save(function(err, user) {
     if(err) return next(err);
-    res.send("Registration is complete. Please login asshole");
+    res.send({token: user.generateJWT()});
   });
 });
 
-router.post('/Login/Local', function(req, res, next) {
+router.post('/login', (req, res, next):any => {
   if(!req.body.username || !req.body.password) return res.status(400).send("Please fill out every field");
+  console.log("before hitting authentication")
   passport.authenticate('local', function(err, user, info) {
-    console.log(user);
+    console.log("hit passport")
     if(err) return next(err);
     if(user) return res.json({ token : user.generateJWT() });
     return res.status(400).send(info);

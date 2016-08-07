@@ -9,25 +9,25 @@
       "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
     },
     "angularjs/angular.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "95eb7b2527a28281cdbf480c0560744bc5190465"
     },
     "express/express.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "node/node.d.ts": {
-      "commit": "43449c604f997d75e917769c662e3d3b3fb2c0ae"
+      "commit": "bc38caf4c4781b8a9b13785a0529fcd47fd1bfb4"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "body-parser/body-parser.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "express-serve-static-core/express-serve-static-core.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "jquery/jquery.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "95eb7b2527a28281cdbf480c0560744bc5190465"
     },
     "requirejs/require.d.ts": {
       "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
@@ -36,7 +36,7 @@
       "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
     },
     "mime/mime.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "serve-favicon/serve-favicon.d.ts": {
       "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
@@ -45,13 +45,34 @@
       "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
     },
     "mongoose/mongoose.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "passport/passport.d.ts": {
-      "commit": "6efd2882d2f658040523aecef53f8ebcaf7061de"
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     },
     "jsonwebtoken/jsonwebtoken.d.ts": {
-      "commit": "43449c604f997d75e917769c662e3d3b3fb2c0ae"
+      "commit": "bc38caf4c4781b8a9b13785a0529fcd47fd1bfb4"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "commit": "95eb7b2527a28281cdbf480c0560744bc5190465"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
+    },
+    "mpromise/mpromise.d.ts": {
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
+    },
+    "mongodb/mongodb.d.ts": {
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
+    },
+    "mongoose-promise/mongoose-promise.d.ts": {
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
+    },
+    "express-jwt/express-jwt.d.ts": {
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
+    },
+    "express-unless/express-unless.d.ts": {
+      "commit": "4fa6875f8087a82fed70f845c0f61f9c298da077"
     }
   }
 }

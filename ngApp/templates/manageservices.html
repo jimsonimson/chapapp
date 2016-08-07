@@ -1,0 +1,82 @@
+<div id="main">
+  <div class="wrapper">
+    <section id="content">
+      <!--breadcrumbs start-->
+      <div id="breadcrumbs-wrapper" class=" grey lighten-3">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <h1>Manage Services</h1>
+              <div class="divider"></div>
+              <ol class="breadcrumb">
+                <li><a href="index.html">Dashboard</a>
+                </li>
+                <li><a href="#">Profile</a>
+                </li>
+                <li class="active">Edit</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--breadcrumbs end-->
+
+
+      <!--start container-->
+      <div class="container">
+        <div class="section">
+          <p class="caption">Edit Hairstyles / Services</p>
+          <div class="divider"></div>
+          <!--Form Advance-->
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel">
+                <h4 class="header2">Add a hairstyle or service to your menu</h4>
+                <div class="row">
+                  <form class="col s12" ng-submit="vm.createHairstyle()">
+                    <div class="row">
+                      <div class="input-field col s4">
+                        <input id="first_name" type="text" ng-model="vm.hairstyle.style">
+                        <label for="first_name">Name of Service</label>
+                      </div>
+
+                      <div class="input-field col s2">
+                        <input id="last_name" type="number" ng-model="vm.hairstyle.price">
+                        <label for="price">Price</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="last_name" type="text" ng-model="vm.hairstyle.img">
+                        <label for="price">Image</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="message5" class="materialize-textarea" length="120" ng-model="vm.hairstyle.description"></textarea>
+                        <label for="message">Description</label>
+                      </div>
+                    </div>
+                    <div class="input-field col s12">
+                      <button class="btn cyan waves-effect waves-light right" type="submit" name="action" ng-click>Submit
+                        <i class="mdi-content-send right"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 m6 l6" ng-repeat="hair in vm.hairstyles">
+          <div class="card-panel">
+            <h4><span class="hairfont">Hair style:</span> {{hair.style}}</h4>
+            <h6>Price: {{hair.price}}</h6>
+            <p>Description: {{hair.description}}</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>

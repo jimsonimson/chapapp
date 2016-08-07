@@ -7,14 +7,14 @@ namespace app {
     $httpProvider: ng.IHttpProvider,
     $urlRouterProvider: ng.ui.IUrlRouterProvider) => {
 
-    $stateProvider.state('Home', {
-      url: '/',
-      templateUrl: '/templates/home.html',
-      controller: app.Controllers.HomeController,
+    $stateProvider.state('LandingPage', {
+      url: '/FindBarber',
+      templateUrl: '/templates/landingpage.html',
+      controller: app.Controllers.LandingPageController,
       controllerAs: 'vm'
     })
-    .state('ForBarbers', {
-      url: '/ForBarbers',
+    .state('forbarbers', {
+      url: '/',
       templateUrl: '/templates/forbarbers.html',
       controller: app.Controllers.UserController,
       controllerAs: 'vm'
@@ -24,10 +24,40 @@ namespace app {
       templateUrl: '/templates/register.html',
       controller: app.Controllers.UserController,
       controllerAs: 'vm'
+    })
+    .state('Login', {
+      url: '/login',
+      templateUrl: '/templates/login.html',
+      controller: app.Controllers.UserController,
+      controllerAs: 'vm'
+    })
+    .state('AccountPage', {
+      url: '/account/:username',
+      templateUrl: '/templates/barberdashboard.html',
+      controller: app.Controllers.DashboardController,
+      controllerAs: 'vm'
+    })
+    .state('MyAccount', {
+      url: '/myaccount',
+      templateUrl: '/templates/manageaccount.html',
+      controller: app.Controllers.DashboardController,
+      controllerAs: 'vm'
+    })
+    .state('EditProfile', {
+      url: '/editprofile',
+      templateUrl: '/templates/manageservices.html',
+      controller: app.Controllers.HairstyleController,
+      controllerAs: 'vm'
+    })
+    .state('BarberProfile', {
+      url: '/profile',
+      templateUrl: '/templates/barberprofile.html',
+      controller: app.Controllers.GlobalController,
+      controllerAs: 'vm'
     });
 
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode(true);
-    $httpProvider.interceptors.push('AuthInterceptor');
+    $httpProvider.interceptors.push('HTTPFactory');
   });
 }

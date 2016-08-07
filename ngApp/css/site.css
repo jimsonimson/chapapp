@@ -7,11 +7,17 @@
  */
 body {
   font-family: "Proxima Nova";
+  background-color: #F2F3F4;
+  vertical-align: middle;
 }
 
 nav ul a,
 nav .brand-logo {
   color: #444;
+  text-decoration: none;
+}
+nav ul li a{
+  text-decoration: none;
 }
 
 p {
@@ -59,12 +65,14 @@ footer.page-footer {
   margin: 0;
 }
 
+
+/*hero*/
+
 .container .hero {
   margin-top: 100px;
   font-weight: 300;
   font-size: 80px;
 }
-
 
 .boo {
   position: relative;
@@ -88,4 +96,13 @@ footer.page-footer {
 #Hero2{
   background-image: url("/css/images/appointmentbood.jpeg");
   background-size: cover;
+}
+
+/*Card Panel*/
+.card-panel{
+  margin: 2.5rem 0 1rem 0;
+}
+
+.hairfont{
+  color: #0097A7;
 }

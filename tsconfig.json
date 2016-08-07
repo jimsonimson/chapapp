@@ -43,6 +43,7 @@
     "typings/globals/mime/index.d.ts",
     "typings/globals/morgan/index.d.ts",
     "typings/globals/node/index.d.ts",
+    "typings/passport/passport.d.ts",
     "typings/globals/serve-favicon/index.d.ts",
     "typings/globals/serve-static/index.d.ts",
     "typings/index.d.ts"

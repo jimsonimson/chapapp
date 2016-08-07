@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col s12 z-depth-4 card-panel">
-      <h2 class="center-align">SignUp!</h2>
+      <h2 class="center-align">Login</h2>
       <div class="row">
-        <form ng-submit="vm.register()" class="col s12">
+        <form ng-submit="vm.login()" class="col s12">
           <div class="row">
             <div class="input-field col s12">
               <input type="text" class="validate" ng-model="vm.user.username"/>
@@ -12,29 +12,15 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input type="text" class="validate" ng-model="vm.user.email">
-              <label>Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
               <input id="pass" type="password" class="validate" ng-model="vm.user.password">
               <label for="pass">Password</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              <p>
-                <input type="checkbox" id="remember">
-                <label for="remember">Remember me</label>
-              </p>
             </div>
           </div>
           <div class="divider"></div>
           <div class="row">
             <div class="col m12">
               <p class="right-align">
-                <button class="btn btn-large waves-effect waves-light" type="submit" ng-click name="action">Register</button>
+                <button class="btn btn-large waves-effect waves-light" type="submit" ng-click name="action">Sign In</button>
               </p>
             </div>
           </div>
