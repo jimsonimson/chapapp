@@ -17,9 +17,8 @@ router.post('/register', (req, res, next):any => {
   });
 });
 
-router.post('/login', (req, res, next):any => {
+router.post('/login', (req, res, next) {
   if(!req.body.username || !req.body.password) return res.status(400).send("Please fill out every field");
-  console.log("before hitting authentication")
   passport.authenticate('local', function(err, user, info) {
     console.log("hit passport")
     if(err) return next(err);

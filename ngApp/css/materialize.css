@@ -2325,7 +2325,7 @@ td, th {
     .collection .collection-item:last-child {
       border-bottom: none; }
     .collection .collection-item.active {
-      background-color: #0097A7;
+      background-color: #ff4081;
       color: white; }
   .collection a.collection-item {
     display: block;

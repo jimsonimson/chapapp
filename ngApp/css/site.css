@@ -106,3 +106,8 @@ footer.page-footer {
 .hairfont{
   color: #0097A7;
 }
+
+.col-centered{
+    float: none;
+    margin: 2.5rem auto;
+}

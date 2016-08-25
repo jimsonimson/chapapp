@@ -13,7 +13,7 @@ namespace app.Controllers {
         this.$location.path('/');
         this.UserService.setToken(res.token);
         this.UserService.setUser();
-        this.$location.path('/dashboard');
+        this.$location.path('/account/:username');
       });
     };
 
@@ -21,14 +21,16 @@ namespace app.Controllers {
       this.UserService.login(this.user).then((res)=>{
         this.UserService.setToken(res.token);
         this.UserService.setUser();
-        this.$location.path('/myprofile')
+        this.$location.path('/')
       })
     }
 
     constructor(
       private UserService: app.Services.UserService,
       private $location: ng.ILocationService
-    ){}
+    ){
+
+    }
   }
   angular.module('app').controller('UserController', UserController);
 }

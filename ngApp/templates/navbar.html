@@ -1,6 +1,6 @@
-<div class="navbar-fixed ">
+<div class="navbar-fixed">
   <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
+    <div class="nav-wrapper container-fluid">
       <a id="logo-container" ui-sref="MyProfile" class="brand-logo" style="letter-spacing: 6px;">CHAP</a>
       <ul class="right hide-on-med-and-down" ng-show="gc.status.username !== null">
         <li><a ui-sref="Dashboard">Dashboard</a></li>
@@ -12,7 +12,16 @@
         <li><a ui-sref="Login">Login</a></li>
       </ul>
       <ul id="nav-mobile" class="right" ng-show="gc.status.username !== null">
-        <li><a ui-sref="Login">Logged in: {{gc.status.username}}</a></li>
+        <li><a ui-sref="Login" >Logged in: {{gc.status.username}}</a></li>
+      </ul>
+      <ul class="right">
+        <li><a ui-sref="MyAccount" >Manage Account</a></li>
+      </ul>
+      <ul class="right">
+        <li><a ui-sref="ManageServices" >Manage Hairstyles</a></li>
+      </ul>
+      <ul class="right">
+        <li><a ui-sref="BarberProfile" >View Profile</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>

@@ -13,7 +13,8 @@ let auth = jwt({
 //POST: /api/v1/hairstyles
 router.post('/', auth, (req, res, next) => {
   let newHairstyle = new Hairstyle(req.body);
-  newHairstyle.createBy = req['payload']._id;
+  newHairstyle.createdBy = req['payload']._id;
+  console.log("on post call" + newHairstyle.createdBy);
   newHairstyle.save((err, hairstyle)=>{
     if(err) return next(err);
     User.update({_id: req['payload']._id}, { $push: {'hairstyle': hairstyle._id}}, (err, results) =>{
@@ -26,9 +27,20 @@ router.post('/', auth, (req, res, next) => {
 //GET: /api/v1/hairstyles
 router.get('/', (req,res, next) => {
   Hairstyle.find({})
+  .populate('createdBy', 'username')
   .exec((err, hairstyles)=>{
     if (err) return next(err);
     res.json(hairstyles);
+  });
+});
+
+//DELETE: /api/v1/hairstyles/:id
+router.delete('/', (req,res,next) => {
+  console.log(req.query._id);
+  if (!req.query._id) return next({ status: 404, message: 'Please include an ID'});
+  Hairstyle.remove({ _id: req.query._id }, (err, result) =>{
+    if (err) return next(err);
+    res.send({ message: 'deleted the hairstyle'});
   });
 });
 

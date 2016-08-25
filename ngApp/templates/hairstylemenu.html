@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- <div class="input-field col s12 m6">
+      <select class="browser-default">
+        <option value="" disabled selected>Choose hairstyle</option>
+        <option ng-repeat="hair in vm.styles" value="{{hair.style}}" data-icon="images/sample-1.jpg" class="circle">{{hair.style}}</option>
+      </select>
+    </div> -->
+    <md-input-container class="col-md-12">
+      <label>Choose Hairstyle</label>
+      <md-select ng-model="vm.selectedHairstyle">
+        <md-optgroup>
+          <md-option ng-repeat="h in vm.styles">
+            {{h.style}}
+          </md-option>
+        </md-optgroup>
+      </md-select>
+   </md-input-container>
+  </div>
+  <div class="row">
+    <div class="col s12 m12 l12" ng-repeat="hair in vm.styles">
+      <div class="card-panel">
+        <h4><span class="hairfont">Hair style:</span> {{hair.style}}</h4>
+        <h6>Price: {{hair.price}}</h6>
+        <p>Description: {{hair.description}}</p>
+        <button type="button" ng-click="vm.deleteStyle(hair._id)" name="button">delete</button>
+      </div>
+    </div>
+  </div>
+</div>

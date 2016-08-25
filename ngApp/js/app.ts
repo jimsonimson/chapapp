@@ -1,6 +1,6 @@
 'use strict';
 namespace app {
-  angular.module('app', ['ui.router', 'ngResource', 'ui.bootstrap'])
+  angular.module('app', ['ui.router', 'ngResource', 'ui.bootstrap', 'ui.materialize'])
     .config((
     $stateProvider: ng.ui.IStateProvider,
     $locationProvider: ng.ILocationProvider,
@@ -32,7 +32,7 @@ namespace app {
       controllerAs: 'vm'
     })
     .state('AccountPage', {
-      url: '/account/:username',
+      url: '/account/:id',
       templateUrl: '/templates/barberdashboard.html',
       controller: app.Controllers.DashboardController,
       controllerAs: 'vm'
@@ -43,8 +43,8 @@ namespace app {
       controller: app.Controllers.DashboardController,
       controllerAs: 'vm'
     })
-    .state('EditProfile', {
-      url: '/editprofile',
+    .state('ManageServices', {
+      url: '/manageservices',
       templateUrl: '/templates/manageservices.html',
       controller: app.Controllers.HairstyleController,
       controllerAs: 'vm'
@@ -52,8 +52,8 @@ namespace app {
     .state('BarberProfile', {
       url: '/profile',
       templateUrl: '/templates/barberprofile.html',
-      controller: app.Controllers.GlobalController,
-      controllerAs: 'vm'
+      controller: app.Controllers.HairstyleController,
+      controllerAs: 'hc'
     });
 
     $urlRouterProvider.otherwise('/');

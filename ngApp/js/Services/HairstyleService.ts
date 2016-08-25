@@ -9,6 +9,10 @@ namespace app.Services{
 
     public getAll(){
       return this.HairstyleResource.query();
+    };
+
+    public deleteHairstyle(hairstyle){
+      return this.HairstyleResource.delete({ _id: hairstyle }).$promise;
     }
 
     constructor(

@@ -1,19 +1,30 @@
 'use strict'
 namespace app.Controllers{
   export class HairstyleController{
-    public hairstyle;
-    public hairstyles;
+    public hairstyle={};
+    public selectedHairstyle;
+    public styles = [];
 
-    public createHairstyle(hairstyle){
+    public addHairstyle(){
       this.HairstyleService.saveHairstyle(this.hairstyle).then((res)=>{
-        console.log('succesfully added hairstyle')
+        this.styles.push(res);
+        this.$location.path('/manageservices')
       })
     };
 
+    public deleteStyle(hairstyle){
+      this.HairstyleService.deleteHairstyle(hairstyle).then((res)=>{
+        this.styles.splice(this.styles.indexOf(hairstyle), 1)
+        console.log(res.message);
+      });
+    }
+
     constructor(
-      private HairstyleService: app.Services.HairstyleService
+      private HairstyleService: app.Services.HairstyleService,
+      private UserService: app.Services.UserService,
+      private $location: ng.ILocationService
     ){
-      this.hairstyles = HairstyleService.getAll();
+      this.styles = HairstyleService.getAll();
     }
   }
   angular.module('app').controller('HairstyleController', HairstyleController);

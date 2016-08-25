@@ -2,6 +2,7 @@
 namespace app.Controller{
   export class AppointmentController{
     public appointments;
+    public appointment;
 
     constructor(){
 
