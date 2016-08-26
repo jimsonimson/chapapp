@@ -14,6 +14,7 @@ const app = express();
 import mongoose = require('mongoose');
 require('./models/user');
 require('./models/hairstyle');
+require('./models/appointment');
 require('./config/passport');
 
 //mlab (uncomment to use live database)
@@ -41,8 +42,11 @@ app.use(passport.initialize());
 /////////////////////////////////////////////////////////////////
 let userRoutes = require('./routes/userRoutes');
 let hairstyleRoutes = require('./routes/hairstyleRoutes');
+let appointmentRoutes = require('./routes/appointmentRoutes');
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/hairstyles', hairstyleRoutes);
+app.use('/api/v1/appointments', appointmentRoutes);
+
 
 
 app.use(express.static('./ngApp'));

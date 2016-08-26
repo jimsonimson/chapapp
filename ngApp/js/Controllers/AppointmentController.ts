@@ -1,11 +1,22 @@
 'use strict';
 namespace app.Controller{
   export class AppointmentController{
-    public appointments;
-    public appointment;
+    public appointment={};
+    public appointments = [];
 
-    constructor(){
+    public submitAppt(){
+      this.AppointmentService.saveAppt(this.appointment).then((res)=>{
+        this.appointments.push(res);
+        this.$location.path('/');
+      });
+    };
 
+
+    constructor(
+      private AppointmentService: app.Services.AppointmentService,
+      private $location: ng.ILocationService
+    ){
+      this.appointments = AppointmentService.getAllBarberAppointments();
     };
   }
   angular.module('app').controller('AppointmentController', AppointmentController);

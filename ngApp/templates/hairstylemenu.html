@@ -1,29 +1,41 @@
 <div class="container-fluid">
   <div class="row">
-    <!-- <div class="input-field col s12 m6">
-      <select class="browser-default">
-        <option value="" disabled selected>Choose hairstyle</option>
-        <option ng-repeat="hair in vm.styles" value="{{hair.style}}" data-icon="images/sample-1.jpg" class="circle">{{hair.style}}</option>
-      </select>
-    </div> -->
     <md-input-container class="col-md-12">
       <label>Choose Hairstyle</label>
-      <md-select ng-model="vm.selectedHairstyle">
+      <md-select ng-model="hm.selectedHairstyle">
         <md-optgroup>
-          <md-option ng-repeat="h in vm.styles">
+          <md-option ng-repeat="h in hm.styles">
             {{h.style}}
           </md-option>
         </md-optgroup>
       </md-select>
    </md-input-container>
   </div>
-  <div class="row">
-    <div class="col s12 m12 l12" ng-repeat="hair in vm.styles">
+  <!-- <div class="row">
+    <div class="col s12 m12 l12" ng-repeat="hair in hm.styles">
       <div class="card-panel">
         <h4><span class="hairfont">Hair style:</span> {{hair.style}}</h4>
         <h6>Price: {{hair.price}}</h6>
         <p>Description: {{hair.description}}</p>
         <button type="button" ng-click="vm.deleteStyle(hair._id)" name="button">delete</button>
+      </div>
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col s12 m4" ng-repeat="hair in hm.styles">
+      <div class="card">
+        <div class="card-image">
+          <img ng-src="{{hair.img}}">
+          <span class="card-title">{{hair.style}}</span>
+        </div>
+        <div class="card-content">
+          <b>{{hair.style}}</b><br>
+          <span>Price: </span><i>{{hair.price}}</i>
+          <p>{{hair.description}}</p>
+        </div>
+        <div class="card-action">
+          <button type="button" ng-click="vm.deleteStyle(hair._id)" name="button">delete</button>
+        </div>
       </div>
     </div>
   </div>

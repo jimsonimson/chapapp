@@ -3,38 +3,62 @@
     <div class="card-panel">
       <h4 class="header2">Book Appointment</h4>
       <div class="row">
-        <form class="col s12">
+        <form class="col s12" ng-submit="vm.submitAppt()">
           <div class="row">
             <div class="input-field col s6">
               <input id="name" type="text">
-              <label for="first_name">Name</label>
+              <label ng-model="vm.appointment.customerName" for="first_name">Name</label>
             </div>
             <div class="input-field col s6">
-              <input id="phonenumber" type="email">
+              <input ng-model="vm.appointment.phone" id="phonenumber" type="email">
               <label for="phonenumber">Phone Number</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <select class="" ng-model="" material-select watch>
+              <select class="" ng-model="vm.appointment.hairstyle" material-select watch>
                 <option ng-repeat="h in hc.styles">{{h.style}}</option>
               </select>
               <label>choose hairstyle</label>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s6">
-              <input id="date" type="date">
-              <label for="date">Date</label>
+            <div class="col col s6 m6 l6">
+              <label for="inputCreated">Input date</label>
+              <input input-date
+                  type="text"
+                  name="created"
+                  id="inputCreated"
+                  ng-model="vm.appointment.appointmentDate"
+                  container=""
+                  format="dd/mm/yyyy"
+                  months-full="{{ month }}"
+                  months-short="{{ monthShort }}"
+                  weekdays-full="{{ weekdaysFull }}"
+                  weekdays-short="{{ weekdaysShort }}"
+                  weekdays-letter="{{ weekdaysLetter }}"
+                  disable="disable"
+                  min="{{ minDate }}"
+                  max="{{ maxDate }}"
+                  today="today"
+                  clear="clear"
+                  close="close"
+                  select-years="15"
+                  on-start="onStart()"
+                  on-render="onRender()"
+                  on-open="onOpen()"
+                  on-close="onClose()"
+                  on-set="onSet()"
+                  on-stop="onStop()" />
             </div>
             <div class="input-field col s6">
-              <input id="time" type="time">
+              <input ng-model="vm.appointment.appointmentTime" id="time" type="time">
               <label for="time">Time</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="message" class="materialize-textarea"></textarea>
+              <textarea ng-model="vm.appointment.message" id="message" class="materialize-textarea"></textarea>
               <label for="message">Message</label>
             </div>
             <div class="row">

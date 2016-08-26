@@ -5,7 +5,8 @@ namespace app.Services{
       _id: null,
       email: null,
       username: null,
-      appointments: null
+      appointments: null,
+      hairstyles: null
     }
     public UserRegisterResource;
     public UserLoginResource;
@@ -28,6 +29,7 @@ namespace app.Services{
       this.status.email = u.email;
       this.status.username = u.username;
       this.status.appointments = u.appointments;
+      this.status.hairstyles = u.hairstyles;
     };
 
     public removeToken(){

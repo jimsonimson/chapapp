@@ -1,8 +1,12 @@
 <div class="row">
     <div class="col s12">
         <ul tabs reload="allTabContentLoaded">
-            <li class="tab col s3" ng-repeat="tab in vm.tabs"><a >{{tab.title}}</a></li>
+            <li class="tab col s3"><a href="#about">About</a></li>
+            <li class="tab col s3"><a class="active" href="#services">Services</a></li>
+            <li class="tab col s3"><a class="active" href="#book">Book</a></li>
         </ul>
     </div>
-    <div ng-repeat="tab in vm.tabs" id="{{tab.title}}" class="col s12">{{tab.title}}</div>
+    <div id="about" class="col s12">About Page</div>
+    <div id=services class="col s12"><hairstylemenu></hairstylemenu></div>
+    <div id="book" class="col s12"><apptform></apptform></div>
 </div>

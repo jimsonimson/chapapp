@@ -14,10 +14,10 @@ let auth = jwt({
 router.post('/', auth, (req, res, next) => {
   let newHairstyle = new Hairstyle(req.body);
   newHairstyle.createdBy = req['payload']._id;
-  console.log("on post call" + newHairstyle.createdBy);
+  console.log("Successfully saved style by: " + newHairstyle.createdBy);
   newHairstyle.save((err, hairstyle)=>{
     if(err) return next(err);
-    User.update({_id: req['payload']._id}, { $push: {'hairstyle': hairstyle._id}}, (err, results) =>{
+    User.update({_id: req['payload']._id}, { $push: {'hairstyles': hairstyle._id}}, (err, results) =>{
         if (err) next(err);
         res.send(hairstyle);
     });
