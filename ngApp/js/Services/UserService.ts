@@ -10,6 +10,8 @@ namespace app.Services{
     }
     public UserRegisterResource;
     public UserLoginResource;
+    public UserAllResource;
+    public UserResource;
 
     public register(user){
       return this.UserRegisterResource.save(user).$promise;
@@ -48,10 +50,22 @@ namespace app.Services{
       return this.$window.localStorage.getItem("token");
     };
 
+    //Get individual user info
+    public getUser(userId){
+      return this.UserResource.get({ id: userId }).$promise;
+    }
+
+    //Get all users
+    public getUsers(){
+      return this.UserAllResource.query().$promise;
+    }
+
     constructor(
       private $resource: ng.resource.IResourceService,
       private $window: ng.IWindowService
     ){
+      this.UserResource = $resource('api/v1/users/:id');
+      this.UserAllResource = $resource('api/v1/users');
       this.UserRegisterResource = $resource('/api/v1/users/register');
       this.UserLoginResource = $resource('/api/v1/users/login');
       if (this.getToken()) this.setUser();

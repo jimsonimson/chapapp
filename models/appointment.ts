@@ -5,8 +5,9 @@ let AppointmentSchema = new mongoose.Schema({
   customerName: { type: String },
   hairstyle: { type: mongoose.Schema.Types.ObjectId, ref: 'Hairstyle', requirement: true },
   phone: {type: Number},
-  appointmentDate: { type: Date },
-  appointmentTime: { type: Date},
+  appointmentDate: { type: String },
+  appointmentTime: { type: String},
+  // createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   message: { type: String }
 });
 

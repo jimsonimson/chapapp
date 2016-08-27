@@ -1,9 +1,15 @@
 namespace app.Controllers {
   export class LandingPageController {
     public searchLocation;
+    public barbers;
 
-    constructor() {
 
+    constructor(
+      private UserService: app.Services.UserService
+    ) {
+      UserService.getUsers().then((res)=>{
+        this.barbers = res;
+      })
     }
   }
 

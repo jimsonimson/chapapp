@@ -7,7 +7,7 @@ namespace app.Controller{
     public submitAppt(){
       this.AppointmentService.saveAppt(this.appointment).then((res)=>{
         this.appointments.push(res);
-        this.$location.path('/');
+        this.$location.path('/account');
       });
     };
 

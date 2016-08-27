@@ -27,6 +27,27 @@ router.post('/login', (req, res, next) {
   })(req, res, next);
 });
 
+//Get specific user
+router.get('/:id', (res, req, next) => {
+  User.findOne({ _id: req.params.id })
+  .populate('appointments')
+  .exec((err, user) => {
+    if (err) return next(err);
+    res.json(user)
+  })
+})
+
+//Get all users
+router.get('/', (req, res, next) => {
+  console.log('Inside the route')
+  User.find({}, { passwordHash: 0, salt: 0})
+    .exec((err, users) =>{
+      if (err) return next(err);
+      if (!users) return next({ message: 'no users'});
+      res.json(users);
+    })
+});
+
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
 
 router.get('/auth/facebook/callback',

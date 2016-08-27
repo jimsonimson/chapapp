@@ -10,14 +10,14 @@
               <label ng-model="vm.appointment.customerName" for="first_name">Name</label>
             </div>
             <div class="input-field col s6">
-              <input ng-model="vm.appointment.phone" id="phonenumber" type="email">
+              <input ng-model="vm.appointment.phone" id="phonenumber" type="number">
               <label for="phonenumber">Phone Number</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <select class="" ng-model="vm.appointment.hairstyle" material-select watch>
-                <option ng-repeat="h in hc.styles">{{h.style}}</option>
+              <select ng-options="h as h.style for h in hc.styles track by h._id" ng-model="vm.appointment.hairstyle" material-select watch>
+                <!-- <option ng-repeat="h in hc.styles">{{h._id}}</option> -->
               </select>
               <label>choose hairstyle</label>
             </div>
@@ -52,8 +52,7 @@
                   on-stop="onStop()" />
             </div>
             <div class="input-field col s6">
-              <input ng-model="vm.appointment.appointmentTime" id="time" type="time">
-              <label for="time">Time</label>
+              <input ng-model="vm.appointment.appointmentTime" type="time">
             </div>
           </div>
           <div class="row">

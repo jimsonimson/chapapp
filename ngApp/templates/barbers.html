@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Barbers</h4>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col s12 m4" ng-repeat="b in vm.barbers">
+        <div class="card">
+          <div class="card-image">
+            <img ng-src="{{b.avatar}}">
+            <span class="card-title">{{b.username}}</span>
+          </div>
+          <div class="card-content">
+            <i>{{b.username}}</i>
+            <b>{{b.profession}}</b><br>
+          </div>
+          <div class="card-action">
+            <a ng-href="/barber/{{b._id}}">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
