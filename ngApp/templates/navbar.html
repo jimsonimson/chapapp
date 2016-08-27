@@ -1,9 +1,10 @@
 <div class="navbar-fixed">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container-fluid">
-      <a id="logo-container" ui-sref="MyProfile" class="brand-logo" style="letter-spacing: 6px;">CHAP</a>
+      <a id="logo-container" ng-show="!gc.status.username" ui-sref="forbarbers" class="brand-logo" style="letter-spacing: 6px;">CHAP</a>
+      <a id="logo-container" ng-show="gc.status.username" ui-sref="Dashboard" class="brand-logo" style="letter-spacing: 6px;">CHAP</a>
       <ul class="right hide-on-med-and-down" ng-show="gc.status.username !== null">
-        <li><a ui-sref="Dashboard">Dashboard</a></li>
+        <li><a ui-sref="Dashboard" ng-show="gc.status.username">Dashboard</a></li>
       </ul>
       <ul id="nav-mobile" class="right"  ng-show="gc.status.username === null">
         <li><a href="/register">SignUp</a></li>
@@ -14,13 +15,13 @@
       <ul id="nav-mobile" class="right" ng-show="gc.status.username !== null">
         <li><a ui-sref="Login" >Logged in: {{gc.status.username}}</a></li>
       </ul>
-      <ul class="right">
+      <ul class="right" ng-show="gc.status.username">
         <li><a ui-sref="MyAccount" >Manage Account</a></li>
       </ul>
-      <ul class="right">
+      <ul class="right" ng-show="gc.status.username">
         <li><a ui-sref="ManageServices" >Manage Hairstyles</a></li>
       </ul>
-      <ul class="right">
+      <ul class="right" ng-show="gc.status.username">
         <li><a ui-sref="MyProfile" >View Profile</a></li>
       </ul>
       <ul class="right">

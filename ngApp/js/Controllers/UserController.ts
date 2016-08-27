@@ -13,7 +13,7 @@ namespace app.Controllers {
         this.$location.path('/');
         this.UserService.setToken(res.token);
         this.UserService.setUser();
-        this.$location.path('/account/:username');
+        this.$location.path('/dashboard');
       });
     };
 
@@ -21,7 +21,7 @@ namespace app.Controllers {
       this.UserService.login(this.user).then((res)=>{
         this.UserService.setToken(res.token);
         this.UserService.setUser();
-        this.$location.path('/')
+        this.$location.path('/dashboard')
       })
     }
 
