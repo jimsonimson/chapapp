@@ -3,7 +3,7 @@ namespace app.Controllers{
   export class HairstyleController{
     public hairstyle={};
     public selectedHairstyle;
-    public styles = [];
+    public styles;
 
     public addHairstyle(){
       this.HairstyleService.saveHairstyle(this.hairstyle).then((res)=>{
@@ -24,7 +24,7 @@ namespace app.Controllers{
       private UserService: app.Services.UserService,
       private $location: ng.ILocationService
     ){
-      this.styles = HairstyleService.getAll();
+      this.styles = HairstyleService.getUserHairstyles();
     }
   }
   angular.module('app').controller('HairstyleController', HairstyleController);

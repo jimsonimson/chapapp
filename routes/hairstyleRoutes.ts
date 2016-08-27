@@ -25,9 +25,8 @@ router.post('/', auth, (req, res, next) => {
 });
 
 //GET: /api/v1/hairstyles
-router.get('/', (req,res, next) => {
-  Hairstyle.find({})
-  .populate('createdBy', 'username')
+router.get('/user', auth, (req,res, next) => {
+  Hairstyle.find({ createdBy: req['payload']._id })
   .exec((err, hairstyles)=>{
     if (err) return next(err);
     res.json(hairstyles);

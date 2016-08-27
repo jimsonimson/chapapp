@@ -37,7 +37,8 @@ UserSchema.method('generateJWT', function(){
     _id: this._id,
     username: this.username,
     email: this.email,
-    appointments: this.appointments
+    appointments: this.appointments,
+    hairstyles: this.hairstyles
   }, process.env.JWT_SECRET);
 });
 
