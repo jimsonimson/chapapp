@@ -12,8 +12,11 @@
       <ul id="nav-mobile" class="right"  ng-show="gc.status.username === null">
         <li><a ui-sref="Login">Login</a></li>
       </ul>
+      <ul id="nav-mobile" class="right"  ng-show="gc.status.username">
+        <li><a ng-click="gc.logout()">Logout</a></li>
+      </ul>
       <ul id="nav-mobile" class="right" ng-show="gc.status.username !== null">
-        <li><a ui-sref="Login" >Logged in: {{gc.status.username}}</a></li>
+        <li><a>Logged in: {{gc.status.username}}</a></li>
       </ul>
       <ul class="right" ng-show="gc.status.username">
         <li><a ui-sref="MyAccount" >Manage Account</a></li>

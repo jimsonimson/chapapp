@@ -10,7 +10,6 @@ namespace app.Controllers {
         password: this.user.password
       }
       this.UserService.register(user).then((res)=>{
-        this.$location.path('/');
         this.UserService.setToken(res.token);
         this.UserService.setUser();
         this.$location.path('/dashboard');

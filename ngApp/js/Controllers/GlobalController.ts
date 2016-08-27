@@ -7,7 +7,6 @@ namespace app.Controllers{
       this.UserService.removeToken();
       this.UserService.removeUser();
       this.$location.path('/');
-
     };
 
     constructor(
