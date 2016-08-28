@@ -20,7 +20,6 @@ router.post('/register', (req, res, next):any => {
 router.post('/login', (req, res, next) {
   if(!req.body.username || !req.body.password) return res.status(400).send("Please fill out every field");
   passport.authenticate('local', function(err, user, info) {
-    console.log("hit passport")
     if(err) return next(err);
     if(user) return res.json({ token : user.generateJWT() });
     return res.status(400).send(info);
@@ -28,18 +27,18 @@ router.post('/login', (req, res, next) {
 });
 
 //Get specific user
-router.get('/:id', (res, req, next) => {
-  User.findOne({ _id: req.params.id })
-  .populate('appointments')
+router.get('/:id', (req, res, next) => {
+  User.findOne({ _id: req.params.id }, { passwordHash: 0, salt: 0})
+  .populate('hairstyles', 'img style description price')
   .exec((err, user) => {
     if (err) return next(err);
-    res.json(user)
+    if (!user) return next({message: 'no users.'});
+    res.send(user);
   })
 })
 
 //Get all users
 router.get('/', (req, res, next) => {
-  console.log('Inside the route')
   User.find({}, { passwordHash: 0, salt: 0})
     .exec((err, users) =>{
       if (err) return next(err);

@@ -52,8 +52,14 @@ namespace app.Services{
 
     //Get individual user info
     public getUser(userId){
-      return this.UserResource.get({ id: userId }).$promise;
-    }
+      let q = this.$q.defer();
+      this.$http.get('/api/v1/users/' + userId).then((res)=>{
+        q.resolve(res.data);
+      }, (err)=>{
+        q.reject(err);
+      });
+      return q.promise;
+    };
 
     //Get all users
     public getUsers(){
@@ -62,9 +68,10 @@ namespace app.Services{
 
     constructor(
       private $resource: ng.resource.IResourceService,
-      private $window: ng.IWindowService
+      private $window: ng.IWindowService,
+      private $http: ng.IHttpService,
+      private $q: ng.IQService
     ){
-      this.UserResource = $resource('api/v1/users/:id');
       this.UserAllResource = $resource('api/v1/users');
       this.UserRegisterResource = $resource('/api/v1/users/register');
       this.UserLoginResource = $resource('/api/v1/users/login');

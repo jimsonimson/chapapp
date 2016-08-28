@@ -1,0 +1,141 @@
+<div class="hero-unit">
+  <div class="container-fluid center">
+    <!-- Header -->
+    <div>
+      <img ng-src="{{bp.profile.avatar}}" class="circular" alt="profilepic.jpg" />
+      <h3>FirstName LastName</h3>
+      <h5>@{{bp.profile.username}}</h5>
+      <h6>Hair Dresser</h6>
+    </div>
+
+    <!-- Tabbar -->
+    <div class="row">
+        <div class="col s12">
+            <ul tabs reload="allTabContentLoaded">
+                <li class="tab col s3"><a class="active" href="#about">About</a></li>
+                <li class="tab col s3"><a href="#services">Services</a></li>
+                <li class="tab col s3"><a class="active" href="#book">Book</a></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+    </div>
+
+    <!-- Content -->
+    <div class="row">
+
+      <!-- About -->
+      <div id="about" class="col s12">
+        About Page
+      </div>
+
+      <!-- Hairstyles -->
+      <div id=services class="col s12">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col s12 m4" ng-repeat="hair in bp.profile.hairstyles">
+              <div class="card">
+                <div class="card-image">
+                  <img ng-src="{{hair.img}}">
+                  <span class="card-title">{{hair.style}}</span>
+                </div>
+                <div class="card-content">
+                  <b>{{hair.style}}</b><br>
+                  <span>Price: </span><i>{{hair.price}}</i>
+                  <p>{{hair.description}}</p>
+                </div>
+                <div class="card-action">
+                  <button type="button" ng-click="" name="button">Book hairstyle</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appointment Form -->
+      <div id="book" class="col s12">
+        <div class="container-fluid">
+          <div class="col s12 m12 l12">
+            <div class="card-panel">
+              <h4 class="header2">Book Appointment</h4>
+              <div class="row">
+                <form class="col s12" ng-submit="bp.submitAppt()">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input ng-model="bp.appointment.customerName" id="name" type="text">
+                      <label for="first_name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input ng-model="bp.appointment.phone" id="phonenumber" type="number">
+                      <label for="phonenumber">Phone Number</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <select ng-options="h as h.style for h in bp.profile.hairstyles track by h._id" ng-model="bp.appointment.hairstyle" material-select watch>
+                        <!-- <option ng-repeat="h in hc.styles">{{h._id}}</option> -->
+                      </select>
+                      <label>choose hairstyle</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col s6 m6 l6">
+                      <label for="inputCreated">Input date</label>
+                      <input input-date
+                          type="text"
+                          name="created"
+                          id="inputCreated"
+                          ng-model="bp.appointment.appointmentDate"
+                          container=""
+                          format="dd/mm/yyyy"
+                          months-full="{{ month }}"
+                          months-short="{{ monthShort }}"
+                          weekdays-full="{{ weekdaysFull }}"
+                          weekdays-short="{{ weekdaysShort }}"
+                          weekdays-letter="{{ weekdaysLetter }}"
+                          disable="disable"
+                          min="{{ minDate }}"
+                          max="{{ maxDate }}"
+                          today="today"
+                          clear="clear"
+                          close="close"
+                          select-years="15"
+                          on-start="onStart()"
+                          on-render="onRender()"
+                          on-open="onOpen()"
+                          on-close="onClose()"
+                          on-set="onSet()"
+                          on-stop="onStop()" />
+                    </div>
+                    <div class="input-field col s6">
+                      <input ng-model="bp.appointment.appointmentTime" type="time">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea ng-model="bp.appointment.message" id="message" class="materialize-textarea"></textarea>
+                      <label for="message">Message</label>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                          <i class="mdi-content-send right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>

@@ -59,7 +59,7 @@ namespace app {
       url: '/barber/:id',
       templateUrl: '/templates/barberprofile.html',
       controller: app.Controllers.BarberProfileController,
-      controllerAs: 'vm'
+      controllerAs: 'bp'
     })
     .state('Barbers', {
       url: '/barbers',
