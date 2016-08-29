@@ -15,7 +15,7 @@ namespace app.Controller{
     constructor(
       private AppointmentService: app.Services.AppointmentService,
       private $location: ng.ILocationService,
-      private $ui
+      private uiCalenderConfig
     ){
       this.appointments = AppointmentService.getAllBarberAppointments();
     };

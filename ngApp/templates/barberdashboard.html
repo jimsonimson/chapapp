@@ -1,5 +1,17 @@
 <div class="container-fluid">
-    <div ui-calendar="vm.uiConfig.calendar" ng-model="vm.eventSources" calendar="myCalendar"></div>
+  <div class="row">
+    <div class="col-md-8">
+      <div ui-calendar="vm.uiConfig.calendar" ng-model="vm.eventSources" calendar="myCalendar"></div>
+    </div>
+    <!-- <div class="col-md-4">
+      <div ng-show="vm.SelectedEvent" class="alert alert-success" style="margin-top:50px">
+        <h2>Selected Event: </h2>
+        <h3>{{vm.SelectedEvent.title}}</h3>
+        <p>{{vm.SelectedEvent.description}}</p>
+      </div>
+    </div> -->
+  </div>
+
 </div>
 <div class="row">
   <div class="card-panel" ng-repeat="a in vm.appointments">

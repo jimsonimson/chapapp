@@ -2,11 +2,20 @@
 namespace app.Controllers{
   export class BarberProfileController{
     public profile;
-    public appointment={};
+    public appointment;
     public appointments=[];
 
     public submitAppt(){
-      this.AppointmentService.saveAppt(this.appointment).then((res)=>{
+      let appt = {
+        customerName: this.appointment.customerName,
+        phone: this.appointment.phone,
+        hairstyle: this.appointment.hairstyle,
+        appointmentDate: this.appointment.appointmentDate,
+        appointmentTime: this.appointment.appointmentTime,
+        message: this.appointment.message,
+        barber: this.profile._id
+      }
+      this.AppointmentService.saveAppt(appt).then((res)=>{
         this.appointments.push(res);
         this.$location.path('/account');
       });

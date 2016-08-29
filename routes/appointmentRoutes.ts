@@ -10,35 +10,34 @@ let auth = jwt({
   secret: process.env.JWT_SECRET
 });
 
-
-
 //POST: /api/v1/appointments
-router.post('/', auth, (req, res, next) => {
-  let newAppointment = new Appointment(req.body);
-  // newAppointment.created = Date.now();
-  newAppointment.createdBy = req['payload']._id;
-  console.log("on post call made by: " + newAppointment.createdBy);
-  newAppointment.save((err, appointment)=>{
-    console.log("entered save function");
-    if (err) {
-      if (err.name === 'ValidationError') {
-        res.status(422).send(err);
-      }
-      else {
-        res.status(400).send(err);
-      };
-    };  
-    User.update({_id: req['payload']._id}, { $push: {'appointment': appointment._id}}, (err, results) =>{
-        if (err) next(err);
-        res.send(appointment);
-    });
+//Saving appointment | first find if barber exists
+router.post('/', auth, (req, res, next) =>{
+  User.findOne({ _id: req.body.barber })
+  .exec((err, user)=>{
+    if(err) return next(err);
+    if (!user) return next({ status: 404, message: 'No user found'});
+    req['user'] = user;
+    next();
   });
 });
 
-//GET: /api/v1/appointments
-router.get('/', (req,res, next) => {
-  Appointment.find({})
-  .populate('createdBy', 'username')
+//When user exists, post appointment
+router.post('/', auth, (req, res, next) =>{
+  let appointment = new Appointment(req.body);
+  appointment.save((err, appt)=>{
+    if (err) return next(err);
+    if (!appt) return next({ message: 'Error saving appointment.'});
+    req['user'].appointments.push(appt._id);
+    req['user'].save();
+    res.send(appt);
+  })
+})
+
+
+//GET: User's appointments
+router.get('/', auth, (req,res, next) => {
+  Appointment.find({ barber: req['payload']._id })
   .exec((err, appointments)=>{
     if (err) return next(err);
     res.json(appointments);

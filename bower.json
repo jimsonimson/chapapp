@@ -25,6 +25,7 @@
     "angular-materialize": "^0.1.9",
     "angular-material": "^1.1.0",
     "angular-ui-calendar": "^1.0.2",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "jquery-ui": "^1.12.0"
   }
 }
