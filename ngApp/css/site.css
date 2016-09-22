@@ -118,10 +118,11 @@ footer.page-footer {
 
 /*Avatar*/
 .circle-image{
-    width:200px;
-    height:200px;
+    width:150px;
+    height:150px;
     border-radius:50%;
     display:block;
     margin:auto;
-    background-position-y:25% 
+    background-position: center center;
+    background-size: cover; 
 }

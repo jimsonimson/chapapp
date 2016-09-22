@@ -1,7 +1,7 @@
 <div class="container">
-  <h2 class="text-center">Edit profile</h2>
   <div class="row">
     <form class="col-md-8 col-md-offset-2" ng-submit="vm.updateProfile()">
+      <h2>Edit Account</h2>
       <div class="card-panel">
         <div class="row">
           <div class="input-field col s12 m6 l6">
@@ -19,46 +19,54 @@
           <div class="input-field col s12 m6 l6">
             <input ng-model="vm.user.email" id="email" type="text">
             <label>Email</label>
-          </div>
-          <div class="input-field col s12 m6 l6">
-            <input ng-model="vm.user.profession" id="profession" type="text">
-            <label>Profession</label>
           </div> 
-
-          <div class="input-field col s12">
-            <input ng-model="vm.user.about" id="about" type="text">
-            <label>About</label>
-          </div>   
         </div>        
       </div>
        
-      <h1>Contact</h1> 
+      <h2>Edit Profile</h2> 
       <div class="card-panel">
         <div class="row">
+          <div class="input-field col s12 m6 l7">
+            <i class="material-icons prefix">account_circle</i>
+            <input ng-model="vm.user.avatar" id="avatar" type="text">
+            <label>Profile Pic</label>
+          </div>
+          <div class="input-field col s12 m6 l4" style="max-height: 100px;">
+            <img style="max-width: 100px; max-height: 100px" class="circle-image img-responsive" ng-src="{{vm.user.avatar}}"/>
+          </div>
+          <br>
+          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">work</i>
+            <input ng-model="vm.user.profession" id="profession" type="text">
+            <label>Profession</label>
+          </div> 
+          <div class="input-field col s12">
+            <i class="material-icons prefix">stars</i>
+            <input ng-model="vm.user.about" id="about" type="text">
+            <label>About</label>
+          </div>  
           <div class="input-field col s12">
             <i class="material-icons prefix">phone</i>
             <input ng-model="vm.user.phone" id="icon_telephone" type="tel" class="validate">
             <label for="icon_telephone">Phone Number</label>
           </div>
-
           <div class="input-field col s12">
+            <i class="material-icons prefix">store</i>
             <input ng-model="vm.user.barbershop" id="barbershop" type="text">
             <label>Barbershop</label>
           </div>
           <div class="input-field col s12">
+            <i class="material-icons prefix">location_on</i>
             <input ng-model="vm.user.barbershopAddress" id="barbershopaddress" type="text">
             <label>Barbershop Address</label>
-          </div>  
-        </div>
+          </div> 
+        </div> 
       </div>
       
-      <h1>Media</h1>
+      <h2>Media</h2>
       <div class="card-panel">
         <div class="row">
-          <div class="input-field col s12 m6 l6">
-            <input ng-model="vm.user.avatar" id="avatar" type="text">
-            <label>Profile Pic</label>
-          </div>
           <div class="input-field col s12">
             <input ng-model="vm.user.pics" id="pictures" type="text">
             <label>Pictures</label>
