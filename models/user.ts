@@ -21,6 +21,7 @@ let UserSchema = new mongoose.Schema({
   tags: [{ type: String }],
   barbershop: {type: String},
   barbershopAddress: { type: String },
+  phone: { type: String },
   socialMedia: [{type: String}]
 })
 

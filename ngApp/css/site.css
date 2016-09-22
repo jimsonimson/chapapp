@@ -9,8 +9,12 @@ body {
   font-family: "Proxima Nova";
   background-color: #F2F3F4;
   vertical-align: middle;
+  text-decoration: none;
 }
-
+h2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+}
 nav ul a,
 nav .brand-logo {
   color: #444;

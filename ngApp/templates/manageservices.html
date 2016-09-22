@@ -3,9 +3,9 @@
   <div class="section">
     <!--Form Advance-->
     <div class="row">
+      <h2 class="header2">Add Hairstyle</h2>
       <div class="col s12 m12 l12 xs12 animated fadeIn">
-        <div class="well">
-          <h4 class="header2">Add a hairstyle or service to your menu</h4>
+        <div class="card-panel">
           <div class="row">
             <form class="col s12" ng-submit="vm.addHairstyle()">
               <div class="row">
@@ -45,7 +45,7 @@
     <div class="col s12 m12 l12" ng-repeat="hair in vm.styles">
       <div class="card horizontal">
         <div class="card-image">
-          <img class="img-responsive" ng-src="{{hair.img}}">
+          <img class="img-responsive" ng-src="{{hair.img}}" style="max-height:300px">
         </div>
         <div class="card-stacked">
           <div class="card-content">

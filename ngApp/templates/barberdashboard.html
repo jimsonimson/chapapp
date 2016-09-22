@@ -11,7 +11,7 @@
     </ul>
   </div> -->
   <div class="row">
-    <div class="card-panel" ng-repeat="a in vm.appointments">
+    <div class="card-panel hoverable" ng-repeat="a in vm.appointments">
       <span>Customer: <small>{{a.customerName}}</small></span><br>
       <span>Service: <small>{{a.hairstyle.style}}</small></span><br>
       <span>On: <small>{{a.appointmentDate}}</small></span><br>

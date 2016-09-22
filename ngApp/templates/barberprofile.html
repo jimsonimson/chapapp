@@ -22,14 +22,21 @@
 
     <!-- Content -->
     <div class="row">
-
       <!-- About -->
       <div id="about" class="col s12">
-        <h4>BARBER SHOP:<span>{{vm.profile.barbershop}}</span></h4>
-        
+        <p>
+          {{vm.profile.about}}
+        </p>
+        <div class="divider"></div>
+        <h2>Contact</h2>
         <div class="well">
-          about
+          <p><b>BARBERSHOP</b>:<span>{{vm.profile.barbershop}}</span></p>
+          <p><b>Address</b><span>{{vm.profile.barbershopAddress}}</span></p>
+          <p><b>Phone Number</b><span>{{vm.profile.phone}}</span></p>
         </div>
+    
+        <div class="divider"></div>
+        
       </div>
 
       <!-- Hairstyles -->
@@ -39,7 +46,7 @@
             <div class="col s12 m4" ng-repeat="hair in vm.profile.hairstyles">
               <div class="card">
                 <div class="card-image">
-                  <img ng-src="{{hair.img}}">
+                  <img class="img-responsive" ng-src="{{hair.img}}">
                   <span class="card-title">{{hair.style}}</span>
                 </div>
                 <div class="card-content">

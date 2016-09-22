@@ -70,6 +70,7 @@ router.put('/', auth, (req,res,next) => {
     user.barbershop = req.body.barbershop;
     user.barbershopAddress = req.body.barbershopAddress;
     user.socialMedia = req.body.socialMedia;
+    user.phone = req.body.phone;
     user.token = user.generateJWT();
     user.save((error,user, token): any =>{
       if (err) return next (err);
