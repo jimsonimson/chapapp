@@ -38,6 +38,7 @@ router.post('/', auth, (req, res, next) =>{
 //GET: User's appointments
 router.get('/', auth, (req,res, next) => {
   Appointment.find({ barber: req['payload']._id })
+  .populate('hairstyle', 'style')
   .exec((err, appointments)=>{
     if (err) return next(err);
     res.json(appointments);

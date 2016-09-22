@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/scripts/bootstrap/dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/proximaFonts.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="/css/materialize.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link rel="stylesheet" href="/css/site.css"/>
   <link rel="stylesheet" href="/css/materializecss-icon.css"/>
   <link rel="stylesheet" href="/css/style.css"/>
@@ -25,13 +25,12 @@
 </head>
 
 <body>
-  <navbar></navbar>
-  <!-- <sidenav ng-show="gc.status.username !== null"></sidenav> -->
+  <navbar style="min-width: 1300px !important;"></navbar>
   <ui-view class="container-fluid"></ui-view>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
-  <!-- <script src="/js/jquery-1.11.2.min.js"></script> -->
+  <script src="/scripts/jquery-ui/jquery-ui.min.js"></script>
   <script src="/js/materialize.js"></script>
   <!-- <script src="/js/plugins.js"></script> -->
   <script src="scripts/moment/min/moment.min.js"></script>
@@ -51,7 +50,7 @@
 
   <!-- Calendar -->
   <script src="scripts/angular-ui-calendar/src/calendar.js"></script>
-  <script src="scripts/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script src="scripts/fullcalendar/dist/fullcalendar.js"></script>
   <script src="scripts/fullcalendar/dist/gcal.js"></script>
 
   <!-- Services -->
@@ -70,13 +69,16 @@
   <script src="/js/Controllers/DashboardController.js"></script>
   <script src="/js/Controllers/BarberProfileController.js"></script>
   <script src="/js/Controllers/LandingPageController.js"></script>
+  <script src="/js/Controllers/ManageAccountController.js"></script>
+  <!-- <script src="/js/Controllers/CalendarController.js"></script> -->
 
   <!-- Directives -->
   <script src="/js/Directives/Navbar.js"></script>
   <script src="/js/Directives/Sidenav.js"></script>
+  <script src="/js/Directives/TabBar.js"></script>
   <script src="/js/Directives/ApptForm.js"></script>
   <script src="/js/Directives/hairstyleMenu.js"></script>
-  <script src="/js/Directives/TabBar.js"></script>
+  <script src="/js/Directives/About.js"></script>
 </body>
 
 </html>

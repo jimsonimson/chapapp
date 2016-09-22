@@ -18,7 +18,10 @@ let UserSchema = new mongoose.Schema({
   appointments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Appointment' }],
   hairstyles: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Hairstyle'}],
   availability: [{ type: String }],
-  tags: [{ type: String }]
+  tags: [{ type: String }],
+  barbershop: {type: String},
+  barbershopAddress: { type: String },
+  socialMedia: [{type: String}]
 })
 
 UserSchema.method('setPassword', function(password){

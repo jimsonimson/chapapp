@@ -6,7 +6,18 @@ namespace app.Services{
       email: null,
       username: null,
       appointments: null,
-      hairstyles: null
+      hairstyles: null,
+      profession: null,
+      firstName: null,
+      lastName: null,
+      avatar: null,
+      about: null,
+      pics: null,
+      availability: null,
+      tags: null,
+      barbershop: null,
+      barbershopAddress: null,
+      socialMedia: null
     }
     public UserRegisterResource;
     public UserLoginResource;
@@ -32,6 +43,17 @@ namespace app.Services{
       this.status.username = u.username;
       this.status.appointments = u.appointments;
       this.status.hairstyles = u.hairstyles;
+      this.status.profession = u.profession;
+      this.status.firstName = u.firstName;
+      this.status.lastName = u.lastName;
+      this.status.avatar = u.avatar;
+      this.status.about = u.about;
+      this.status.pics = u.pics;
+      this.status.availability = u.availability;
+      this.status.tags = u.tags;
+      this.status.barbershop = u.barbershop;
+      this.status.barbershopAddress = u.barbershopAddress;
+      this.status.socialMedia = u.socialMedia;
     };
 
     public removeToken(){
@@ -64,6 +86,17 @@ namespace app.Services{
     //Get all users
     public getUsers(){
       return this.UserAllResource.query().$promise;
+    }
+    
+    public updateUser(user){
+      let q = this.$q.defer();
+      this.$http.put('/api/v1/users', user).then((res)=>{
+        q.resolve(res.data);
+      }, (err)=>{
+        console.log("error")
+        q.reject(err);
+      });
+      return q.promise;
     }
 
     constructor(

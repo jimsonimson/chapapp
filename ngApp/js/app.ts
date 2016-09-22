@@ -16,7 +16,7 @@ namespace app {
     .state('forbarbers', {
       url: '/',
       templateUrl: '/templates/forbarbers.html',
-      controller: app.Controllers.UserController,
+      controller: app.Controllers.LandingPageController,
       controllerAs: 'vm'
     })
     .state('Register', {
@@ -37,10 +37,10 @@ namespace app {
       controller: app.Controllers.DashboardController,
       controllerAs: 'vm'
     })
-    .state('MyAccount', {
-      url: '/myaccount',
+    .state('EditProfile', {
+      url: '/editprofile',
       templateUrl: '/templates/manageaccount.html',
-      controller: app.Controllers.DashboardController,
+      controller: app.Controllers.ManageAccountController,
       controllerAs: 'vm'
     })
     .state('ManageServices', {
@@ -49,17 +49,11 @@ namespace app {
       controller: app.Controllers.HairstyleController,
       controllerAs: 'vm'
     })
-    .state('MyProfile', {
-      url: '/profile',
-      templateUrl: '/templates/myprofile.html',
-      controller: app.Controllers.HairstyleController,
-      controllerAs: 'hc'
-    })
     .state('BarberProfile', {
       url: '/barber/:id',
       templateUrl: '/templates/barberprofile.html',
       controller: app.Controllers.BarberProfileController,
-      controllerAs: 'bp'
+      controllerAs: 'vm'
     })
     .state('Barbers', {
       url: '/barbers',

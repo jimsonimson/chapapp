@@ -19,14 +19,14 @@
         <li><a>Logged in: {{gc.status.username}}</a></li>
       </ul>
       <ul class="right" ng-show="gc.status.username">
-        <li><a ui-sref="MyAccount" >Manage Account</a></li>
+        <li><a ui-sref="EditProfile" >Edit my profile</a></li>
       </ul>
       <ul class="right" ng-show="gc.status.username">
         <li><a ui-sref="ManageServices" >Manage Hairstyles</a></li>
       </ul>
-      <!-- <ul class="right" ng-show="gc.status.username">
-        <li><a ui-sref="MyProfile" >View Profile</a></li>
-      </ul> -->
+      <ul class="right" ng-show="gc.status.username">
+        <li><a ng-href="/barber/{{gc.status._id}}">View Profile</a></li>
+      </ul>
       <ul class="right">
         <li><a ui-sref="Barbers">Barbers</a></li>
       </ul>

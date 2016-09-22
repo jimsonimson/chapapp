@@ -1,23 +1,22 @@
 <div class="container-fluid">
+  <!-- <div class="row">
+    <div class="calendar" ng-model="vm.eventSources" calendar="myCalendar" config="vm.uiConfig.calendar" ui-calendar="vm.uiConfig.calendar"></div>
+    <ul class="unstyled">
+      <li ng-repeat="e in vm.events | filter:vm.currentDate">
+          <div class="alert alert-info">
+              <a class="close" ng-click="remove($index)"><i class="icon-remove"></i></a>
+              <b> {{e.title}}</b> - {{e.start | date:"MMM dd"}}
+          </div>
+      </li>
+    </ul>
+  </div> -->
   <div class="row">
-    <div class="col-md-8">
-      <div ui-calendar="vm.uiConfig.calendar" ng-model="vm.eventSources" calendar="myCalendar"></div>
+    <div class="card-panel" ng-repeat="a in vm.appointments">
+      <span>Customer: <small>{{a.customerName}}</small></span><br>
+      <span>Service: <small>{{a.hairstyle.style}}</small></span><br>
+      <span>On: <small>{{a.appointmentDate}}</small></span><br>
+      <span>at: <small>{{a.appointmentTime}}</small></span><br>
     </div>
-    <!-- <div class="col-md-4">
-      <div ng-show="vm.SelectedEvent" class="alert alert-success" style="margin-top:50px">
-        <h2>Selected Event: </h2>
-        <h3>{{vm.SelectedEvent.title}}</h3>
-        <p>{{vm.SelectedEvent.description}}</p>
-      </div>
-    </div> -->
   </div>
+</div>
 
-</div>
-<div class="row">
-  <div class="card-panel" ng-repeat="a in vm.appointments">
-    <h4>Customer: <small>{{a.customerName}}</small></h4>
-    <h5>Service: <small>{{a.hairstyle}}</small></h5>
-    <h5>On: <small>{{a.appointmentDate}}</small></h5>
-    <h5>at: <small>{{a.appointmentTime}}</small></h5>
-  </div>
-</div>

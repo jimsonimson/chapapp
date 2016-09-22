@@ -2,9 +2,14 @@
 import express = require('express');
 import passport = require('passport');
 import jwt = require('jsonwebtoken');
+import expjwt = require('express-jwt');
 let mongoose = require('mongoose');
 let User = mongoose.model('User')
 let router = express.Router();
+let auth = expjwt({
+  userProperty: 'payload',
+  secret: process.env.JWT_SECRET
+});
 
 router.post('/register', (req, res, next):any => {
   let user = new User();
@@ -46,6 +51,32 @@ router.get('/', (req, res, next) => {
       res.json(users);
     })
 });
+
+router.put('/', auth, (req,res,next) => {
+  console.log(req.body);
+  User.findOne({ _id: req['payload']._id})
+  .exec((err,user)=>{
+    if (err) return next(err);
+    user.username = req.body.username;
+    user.email = req.body.email;
+    user.profession = req.body.profession;
+    user.firstName = req.body.firstName;
+    user.lastName = req.body.lastName;
+    user.avatar = req.body.avatar;
+    user.about = req.body.about;
+    user.pics = req.body.pics;
+    user.availability = req.body.availability;
+    user.tags = req.body.tags;
+    user.barbershop = req.body.barbershop;
+    user.barbershopAddress = req.body.barbershopAddress;
+    user.socialMedia = req.body.socialMedia;
+    user.token = user.generateJWT();
+    user.save((error,user, token): any =>{
+      if (err) return next (err);
+      res.json({token: user.generateJWT()});
+    });
+  })
+})
 
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email'] }));
 

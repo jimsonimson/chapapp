@@ -3,22 +3,22 @@
   <div class="section">
     <!--Form Advance-->
     <div class="row">
-      <div class="col s6 m6 l6 xs12 animated fadeIn">
-        <div class="card-panel">
+      <div class="col s12 m12 l12 xs12 animated fadeIn">
+        <div class="well">
           <h4 class="header2">Add a hairstyle or service to your menu</h4>
           <div class="row">
             <form class="col s12" ng-submit="vm.addHairstyle()">
               <div class="row">
-                <div class="input-field col s4">
+                <div class="input-field col s12 m4 l4">
                   <input id="first_name" type="text" ng-model="vm.hairstyle.style">
                   <label for="first_name">Name of Service</label>
                 </div>
 
-                <div class="input-field col s2">
+                <div class="input-field col s12 m2 l2">
                   <input id="last_name" type="number" ng-model="vm.hairstyle.price">
                   <label for="price">Price</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6 l6">
                   <input id="last_name" type="text" ng-model="vm.hairstyle.img">
                   <label for="price">Image</label>
                 </div>
@@ -30,7 +30,7 @@
                 </div>
               </div>
               <div class="input-field col s12">
-                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Submit
+                <button class="btn cyan waves-effect waves-light btn-group-vertical" type="submit" name="action">Submit
                   <i class="mdi-content-send right"></i>
                 </button>
               </div>
@@ -42,17 +42,20 @@
   </div>
 
   <div class="row">
-    <div class="col s12 m4" ng-repeat="hair in vm.styles">
-      <div class="card">
+    <div class="col s12 m12 l12" ng-repeat="hair in vm.styles">
+      <div class="card horizontal">
         <div class="card-image">
-          <img ng-src="{{hair.img}}">
-          <span class="card-title">{{hair.style}}</span>
+          <img class="img-responsive" ng-src="{{hair.img}}">
         </div>
-        <div class="card-content">
-          <p>{{hair.description}}</p>
-        </div>
-        <div class="card-action">
-          <button type="button" ng-click="vm.deleteStyle(hair._id)" name="button">delete</button>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h4 class="left-align">{{hair.style}}</h4>
+            <span class="right-align">${{hair.price}}</span>
+            <p>{{hair.description}}</p>
+          </div>
+          <div class="card-action">
+            <button type="button" ng-click="vm.deleteStyle(hair._id)" name="button">delete</button>
+          </div>
         </div>
       </div>
     </div>
